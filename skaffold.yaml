@@ -1,0 +1,11 @@
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  artifacts:
+  - imageName: mithun18/healthchecks
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:latest"
+deploy:
+  kubectl:
+    manifests:
